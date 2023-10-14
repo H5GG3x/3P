@@ -11,6 +11,7 @@
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
+            animation: flash 1s linear infinite;
         }
         .error-container {
             text-align: center;
@@ -21,6 +22,11 @@
         }
         .error-container p {
             font-size: 1.2em;
+        }
+        @keyframes flash {
+            0% {background-color: white;}
+            50% {background-color: black;}
+            100% {background-color: white;}
         }
     </style>
 </head>
