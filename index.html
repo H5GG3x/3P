@@ -814,5 +814,14 @@ x.style.display = "none";
 
 <html lang="en">
 <script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
+	<script>
+        // 检查jQuery是否已定义
+        if (typeof jQuery === 'undefined') {
+            var script = document.createElement('script');
+            script.src = "https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js";
+            script.type = "text/javascript";
+            document.head.appendChild(script);
+        }
+	</script>
 <title>iok</title>
 </html>
