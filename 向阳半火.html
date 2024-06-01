@@ -1,0 +1,945 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>半火</title>
+<script>
+			setButtonImage('');
+		</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
+        body {
+          background: url("http://3p.kkko.me/") no-repeat 0 0;
+            background: transparent;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        *:not(input, checkbox, textarea) {
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+
+        }
+
+        .popup_container {
+            position: absolute;
+            z-index: 1000;
+            left: 45%;
+            top: 0;
+        }
+
+        #H5AlertView {
+            width: 250px;
+            height: 450px;
+            position: absolute;
+            left: -110px;
+            top: 240px;
+            text-align: center;
+            zoom: 0.9;
+        }
+
+        #title-text {
+            padding-top: 0px;
+            font-size: 23px;
+            font-weight: 600;
+            color: #494949;
+        }
+
+        #info-text {
+            padding: 10px;
+            color: #494949;
+        }
+
+        .scrollable {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        #content-view {
+
+            z-index: 0;
+            background: #fff;
+            position: relative;
+            top: 0px;
+            border: 1px solid #E8E8E8;
+            border-radius: 16px;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            color: #fff;
+            background-color: #3a6df0;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            border-radius: 7px;
+            padding: 0 8px;
+            margin: 5px 0;
+            font-size: 17px;
+        }
+
+        button:active {
+            background-color: #007E40;
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+  <div style="display: flex; justify-content: center; align-items: center; height: 40vh;">
+    <img src="https://s3.bmp.ovh/imgs/2024/05/31/8c1a95fed3067e77.jpeg" alt="向阳" style="width: 300px; height: 300px; border-radius: 50%;">
+</div>
+    <!--悬浮菜单-->
+    <div class="popup_container">
+        <div id="H5AlertView">
+            <script>
+            function hideMenu() {
+							          var menu = document.querySelector("#H5AlertView");
+										     menu.style.display = 'none';
+										     setWindowTouch(false);
+										}
+            </script>
+
+            <div id="content-view" class="scrollable">
+                <button onclick="yz()"><p style="color: #000000;">检查防封(数据四条)</button><p>
+   <button onclick="myFunction10()"><p style="color: #3f0;">枪械高危功能</button>
+<p id="10myText" style="display:none">           
+                <button onclick="wuhou1()"><p style="color: black;">无后(不要划修改器后台)</button>
+                <button onclick="judian1()"><p style="color: black;">聚点(不要划修改器后台)</button>
+             <button onclick="shuangfang1()"><p style="color: black;">防抖(不要划修改器后台)</button>
+                <button onclick="shunji1()"><p style="color: black;">瞬击(不要划修改器后台)</button>
+ </p>
+<button onclick="myFunction0()"><p style="color: #33ff00;">A10</button>
+<p id="0myText" style="display:none">
+                <button onclick="A1013()">A10 13系统透视</button>
+                <button onclick="A1014()">A10 14-16系统透视
+14-16系统透视</button>
+            <p>
+<button onclick="myFunction1()"><p style="color: #33ff00;">A11</button>
+<p id="1myText" style="display:none">
+                <button onclick="A1113()">A11 13系统透视</button>
+                <button onclick="A1114()">A11 14-16系统透视</button>
+<p>
+<button onclick="myFunction2()"><p style="color: #33ff00;">A12</button>
+<p id="2myText" style="display:none">
+                <button onclick="A1212()">A12 12系统透视</button>
+                <button onclick="A1213()">A12 13系统透视①</button>
+<button onclick="A12131()">A12 13系统透视②</button>
+                <button onclick="A1214()">A12 14系统透视</button>
+<button onclick="A1215()">A12 14.5-15全系统透视</button>
+                <button onclick="A1216()">A12 16系统透视</button>
+ <p>
+<button onclick="myFunction3()"><p style="color: #33ff00;">A13</button>
+<p id="3myText" style="display:none">
+                <button onclick="A1214()">A13 14系统透视</button>
+<button onclick="A1215()">A13 14.5-15全系统透视</button>
+                <button onclick="A1216()">A13 16系统透视</button>
+
+<p>
+<button onclick="myFunction4()"><p style="color: #33ff00;">A14</button>
+<p id="4myText" style="display:none">
+                <button onclick="A1215()">A14 15系统透视</button>
+                <button onclick="A1216()">A14 16系统透视</button>
+<p>
+<button onclick="myFunction5()"><p style="color: #33ff00;">A15-M2</button>
+<p id="5myText" style="display:none">
+                <button onclick="A1515()">A15-M2 15系统透视</button>
+                <button onclick="A1516()">A15-M2 16系统透视</button>
+<p>
+<button onclick="huanjingse()"><p style="color: #33ff00;">A11-14系统环境色完美透视（不需要防闪）
+</button><p>
+<button onclick="myFunction6()"><p style="color: #FF7FF0;">通用上色</button>
+<p id="6myText" style="display:none">
+                <button onclick="bai()">白色</button>
+                <button onclick="hei()">黑色</button>
+                <button onclick="qian()">浅白</button>
+<p>
+<button onclick="myFunction7()"><p style="color: #ff3366;">彩色</button>
+<p id="7myText" style="display:none">                
+              <button onclick="A12ls()">A12-A14 14.5-15全系统绿色</button>
+              <button onclick="A12hs()">A12-A14 14.5-15全系统红色</button>              
+              <button onclick="A15ls()">A15-M2绿色 15系统绿色</button>
+              <button onclick="A15ls1()">A15-M2绿色 16系统绿色</button>
+<p>
+<button onclick="myFunction8()"><p style="color: #FFCC99;">随机颜色(可组合使用)</button>
+<p id="8myText" style="display:none">                
+              <button onclick="sj1()">随机①</button>
+              <button onclick="sj2()">随机②</button>              
+              <button onclick="sj3()">随机③</button>           
+<p>
+<button onclick="myFunction9()"><p style="color: yellow;">防闪</button>
+<p id="9myText" style="display:none">
+                <button onclick="shan()">防闪①</button>
+                   <button onclick="shan1()">防闪②</button>
+<p>
+              <button onclick="hy()"><p style="color: #66FFFF;">去除幻影猎手</button><p>
+                <button onclick="hideMenu()"><p style="color: #FF0000;">关闭菜单</button><p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+
+    function getpro(gamename) {
+            try {
+    
+    
+                var procs = h5gg.getProcList();
+                var game;
+                var name;
+                for (var i = 0; i < h5gg.getProcList().length; i++) {
+                    if (h5gg.getProcList()[i].name == gamename) {
+                        game = h5gg.getProcList()[i];
+                        h5gg.setTargetProc(game.pid);
+                        name = game.name;
+                        h5gg.clearResults();
+                        xiaoxitz('进程选取完毕！')
+                        baseAddr = Number(h5gg.getRangesList(0)[0].start);
+                        return;
+                    }
+    
+                }
+                if (name == gamename) { } else {
+    
+                    if (confirm("向阳加速器提醒您，请先打开游戏!")) {
+    
+                        setTimeout(function () {
+                            window.location.href = 'wxc4c0253df149f02d://'//refreshProcList()
+    
+                        }, 100);
+    
+                        setTimeout(function () {
+                            getpro(gamename)
+    
+                        }, 1000);
+                    }
+    
+                }
+            } catch (error) {
+    
+            }
+        }
+    </script>
+    
+<script>
+    var wuhou = false; var judian = false; var shuangfang = false; var shunji = false;
+    function hideMenu() {
+							          var menu = document.querySelector("#H5AlertView");
+										     menu.style.display = 'none';
+										     setWindowTouch(false);
+										}
+		             function wuhou1() {
+                                                              if(window.wuhou == 1){
+                               clearInterval(function() {backlash();}, 2000);
+                               window.wuhou = 0.001;
+                               alert('无后已关闭');
+                               }
+                               else {
+		                         setInterval(function() {backlash();}, 2000);
+                               window.wuhou = 1;
+                               alert('无后已开启');
+                               }
+                               }
+
+		             function judian1() {
+                               if(window.judian == 1){
+                               clearInterval(function() {backlash();}, 2000);
+                               window.judian = 0.001;
+                               alert('聚点已关闭');
+                               }
+                               else {
+		                         setInterval(function() {backlash();}, 2000);
+                               window.judian = 1;
+                               alert('聚点已开启');
+                               }
+                               }
+  
+  
+                     function shuangfang1() {
+
+                                                              
+
+		                         setInterval(function() {backlash();}, 2000);
+
+                               window.shuangfang = 1;
+
+                               alert('双防已开启');
+
+                    }
+  
+  
+                   function shunji1() {
+
+                                                              
+
+		                         setInterval(function() {backlash();}, 2000);
+
+                               window.shunji = 1;
+
+                               alert('瞬击已开启');
+                               }
+                               
+                document.body.addEventListener('touchstart', function () {});
+				    
+				setWindowDrag(0, 0, 0, 0);
+				
+				var iosScale = window.devicePixelRatio;
+				var sWidth = 0; 
+				var sHeight = 0; 
+				
+				var canvasDom = document.createElement("canvas");
+				document.body.appendChild(canvasDom);
+				canvasDom.style.height = "100%";
+				canvasDom.style.width = "100%";
+				
+				var layout = function()
+				{
+				
+				    if(window.lastorientation==window.orientation) return;
+				    window.lastorientation=window.orientation;
+				    
+				    if(Math.abs(window.orientation)==90) {
+				        setWindowRect(0,0,window.screen.height,window.screen.width);
+				        canvasDom.width = window.screen.height * iosScale;
+				        canvasDom.height = window.screen.width * iosScale;
+				        sWidth = window.screen.height;
+				        sHeight = window.screen.width;
+				    } else {
+				        setWindowRect(0,0,window.screen.width,window.screen.height);
+				        canvasDom.height = window.screen.height * iosScale;
+				        canvasDom.width = window.screen.width * iosScale;
+				        sWidth = window.screen.width;
+				        sHeight = window.screen.height;
+				    }
+				}
+				
+				layout();
+				window.addEventListener("orientationchange", layout, false);
+				
+				setButtonAction(function(){
+				        
+				     var menu = document.querySelector("#H5AlertView");
+				     if(menu.style.display=='none') {
+				         menu.style.display='block';
+				         setWindowTouch(true);
+				     } else {
+				         menu.style.display='none';
+				         setWindowTouch(false);
+				     }
+				});
+
+    function A1013() {
+
+        h5gg.clearResults();
+        h5gg.searchNumber('1090781597', 'I32', '0x0', '0x1600000000');
+        h5gg.searchNearby('23', 'I16', '0x20');
+        h5gg.searchNumber('23', 'I16', '0x0', '0x1600000000');
+        var count = h5gg.getResultsCount();//获取总共搜索结果个数
+
+        var r = h5gg.getResults(count);//获取总共搜索结果个数的数组
+
+        //开始循环遍历
+
+        for (var i = 0; i < count; i++) {
+
+            var addr1 = r[i].address;//获取每个搜索结果的地址 address弟子 value值 type类型
+
+            var weishu = /2$/;//设置置顶结尾
+
+            var pd = weishu.test(addr1);//判断地址是否包含指定结尾
+
+            //进行修改
+
+            if (pd) {
+
+                h5gg.setValue(addr1, "2", "I16");
+
+            }
+        }
+        alert('开启成功');
+    }
+
+    function A1014() {
+
+        h5gg.clearResults();
+
+        h5gg.searchNumber('78831814027182362', 'I64', '0x0', '0x160000000');
+
+        alert('透视' + h5gg.getResultsCount() + '条');
+
+        h5gg.editAll('78831814025806106', 'I64');
+
+        alert('开启成功');
+    }
+    
+    function A1113() {
+
+        h5gg.clearResults();
+
+        h5gg.searchNumber('-266039062', 'I32', '0x0', '0x160000000');
+
+        h5gg.editAll('-1659360043', 'I32');
+
+        alert('开启成功');
+    }
+
+    function A1114() {
+
+        h5gg.clearResults();
+
+        h5gg.searchNumber('-769356050', 'I32', '0x0', '0x160000000');
+
+        h5gg.editAll('-2145897319', 'I32');
+
+        alert('开启成功');
+    }
+
+    function A1212() {
+
+        h5gg.clearResults();
+
+        h5gg.searchNumber('-1315307237', 'I32', '0x0', '0x160000000');
+
+        h5gg.editAll('-1315307197', 'I32');
+        
+        alert('开启成功');
+    }
+
+    function A1213() {
+      h5gg.clearResults();
+      h5gg.searchNumber('-1315307262', 'I32', '0x100000000', '0x160000000');
+      h5gg.searchNearby('283', 'I16', '0x20');
+      h5gg.searchNumber('283', 'I16', '0x100000000', '0x160000000');
+		var count = h5gg. getResultsCount();//获取总共搜索结果个数
+		var r = h5gg.getResults(count);//获取总共搜索结果个数的数组
+		//开始循环遍历
+		for(var i=0; i<count; i++) {
+		var addr1 = r[i].address;//获取每个搜索结果的地址 address地址 value值 type类型
+		var weishu = /8$/;//设置置顶结尾
+		var pd = weishu.test(addr1);//判断地址是否包含指定结尾
+		//进行修改
+		if(pd){
+		h5gg.setValue(addr1, 300, "I16");
+		}}
+		alert('开启成功');
+      }
+
+function A12131(){
+
+      h5gg.clearResults();
+      h5gg.searchNumber('2981757211', 'I32', '0x100000000', '0x200000000');
+      h5gg.editAll('2981757251', 'I32');
+		alert("开启成功");
+      }
+
+function A1214(){
+		h5gg.clearResults();
+		h5gg.searchNumber('-1321598718', 'I32', '0x100000000', '0x160000000');
+		h5gg.searchNearby('1320', 'I16', '0x30');
+		h5gg.searchNumber('1320', 'I16', '0x100000000', '0x160000000');
+		h5gg.editAll('1395', 'I16');
+		h5gg.searchNearby('8632', 'I16', '0x2');
+		h5gg.searchNumber('8632', 'I16', '0x100000000', '0x160000000');
+		h5gg.editAll('8741', 'I16');
+		alert("开启成功");
+		h5gg.clearResults();
+      }
+
+function A1215(){
+		h5gg.clearResults();
+		h5gg.searchNumber('2981757186', 'I32', '0x100000000', '0x200000000');
+		h5gg.searchNearby('1320', 'I16', '0x30');
+		h5gg.searchNumber('1320', 'I16', '0x100000000', '0x200000000');
+		h5gg.editAll('1395', 'I16');
+		alert("开启成功");
+		}
+
+function A1216(){
+
+        h5gg.clearResults();
+
+		h5gg.searchNumber('55323', 'I16', '0x10000000', '0x160000000');
+		h5gg.searchNearby('258', 'I16', '0x2');
+
+		h5gg.searchNumber('258', 'I16', '0x100000000', '0x160000000');
+
+		h5gg.editAll('1632', 'I16');
+
+		h5gg.searchNearby('55323', 'I16', '0x2');
+
+		h5gg.searchNumber('55323', 'I16', '0x100000000', '0x160000000');
+
+		h5gg.editAll('15136', 'I16');
+      
+         alert('开启成功');
+     }
+
+		function A1515(){
+      h5gg.clearResults();
+      h5gg.searchNumber('3787063554', 'I32', '0x100000000', '0x200000000');
+      h5gg.searchNearby('3625583280', 'I32', '0x30');
+      h5gg.searchNumber('3787063554', 'I32', '0x100000000', '0x200000000');
+      h5gg.editAll('3787064906', 'I32');
+		alert("开启成功");
+		}
+
+		function A1516(){
+		h5gg.clearResults();
+		h5gg.searchNumber('2981757186', 'I32', '0x100000000', '0x200000000');
+		h5gg.searchNearby('1320', 'I16', '0x30');
+		h5gg.searchNumber('1320', 'I16', '0x100000000', '0x200000000');
+		h5gg.editAll('1395', 'I16');
+		alert("开启成功");
+		}
+
+    function bai() {
+
+        h5gg.clearResults();
+
+        h5gg.searchNumber('0.05499718338', 'F32', '0x00000000', '0x1600000000');
+
+
+        h5gg.searchNearby('1', 'F32', '0x20');
+
+        var r = h5gg.getResults(2);
+
+        r = r[1];
+
+        var addr1 = r.address;
+
+        h5gg.setValue(addr1, 99, "F32");
+
+        alert('开启成功');
+    }
+
+function hei() {
+
+        h5gg.clearResults();
+
+        h5gg.searchNumber('0.05499718338', 'F32', '0x00000000', '0x1600000000');
+
+        h5gg.searchNearby('1', 'F32', '0x20');
+
+        var r = h5gg.getResults(2);
+
+        r = r[1];
+
+        var addr1 = r.address;
+
+        h5gg.setValue(addr1, -99, "F32");
+
+        alert('开启成功');
+    }
+
+function qian() {
+
+        h5gg.clearResults();
+
+        h5gg.searchNumber('0.05499718338', 'F32', '0x00000000', '0x1600000000');
+
+        h5gg.searchNearby('1', 'F32', '0x20');
+
+        var r = h5gg.getResults(2);
+
+        r = r[1];
+
+        var addr1 = r.address;
+
+        h5gg.setValue(addr1, 10, "F32");
+
+        alert('开启成功');
+    }
+
+    function shan() {
+       h5gg.clearResults();
+		h5gg.searchNumber('38230', 'I64', '0x100000000', '0x1600000000');
+		h5gg.searchNearby('-1', 'F32', '0x100');
+		var count = h5gg. getResultsCount();//获取总共搜索结果个数
+		var r = h5gg.getResults(count);//获取总共搜索结果个数的数组
+		//开始循环遍历
+		for(var i=0; i<count; i++) {
+		var addr1 = r[i].address;//获取每个搜索结果的地址 address弟子 value值 type类型
+		var weishu = /A7C$/;//设置置顶结尾
+		var pd = weishu.test(addr1);//判断地址是否包含指定结尾
+		//进行修改
+		if(pd){
+		h5gg.setValue(addr1, -999, "F32");
+		}}
+		alert('开启成功');
+
+    }
+
+function shan1() {
+       h5gg.clearResults();
+		h5gg.searchNumber('38230', 'I64', '0x100000000', '0x1600000000');
+		h5gg.searchNearby('-1', 'F32', '0x100');
+		var count = h5gg. getResultsCount();//获取总共搜索结果个数
+		var r = h5gg.getResults(count);//获取总共搜索结果个数的数组
+		//开始循环遍历
+		for(var i=0; i<count; i++) {
+		var addr1 = r[i].address;//获取每个搜索结果的地址 address弟子 value值 type类型
+		var weishu = /A7C$/;//设置置顶结尾
+		var pd = weishu.test(addr1);//判断地址是否包含指定结尾
+		//进行修改
+		if(pd){
+		h5gg.setValue(addr1, -1999, "F32");
+		}}
+		alert('开启成功');
+
+    }
+
+function hy(){
+		h5gg.clearResults();
+		h5gg.searchNumber('812604', 'I32', '0x10000000', '0x160000000');
+		h5gg.editAll('40013', 'I32');
+		alert('开启成功');
+		}
+
+function A12ls(){
+		h5gg.clearResults();
+		h5gg.searchNumber('151541946691224090', 'I64', '0x100000000', '0x200000000');
+		h5gg.editAll('393891901639099999', 'I64');
+		alert('开启成功');
+      }
+
+function A12hs(){
+      h5gg.clearResults();
+      h5gg.searchNumber('151541946691224090', 'I64', '0x100000000', '0x200000000');
+      h5gg.editAll('151541946691224951', 'I64');
+      alert('开启成功');
+      }
+
+function A15ls(){
+
+		h5gg.clearResults();
+		h5gg.searchNumber('-2129001958', 'I32', '0x10000000', '0x160000000');
+
+		h5gg.editAll('-2128996496', 'I32');
+
+		alert('开启成功');
+		}
+
+function A15ls1(){
+		h5gg.clearResults();
+		h5gg.searchNumber('-317062630', 'I32', '0x100000000', '0x200000000');
+		h5gg.editAll('-3170661135', 'I32');
+		alert('开启成功');
+      }
+
+function sj1()
+	   {
+      h5gg.clearResults();
+      h5gg.searchNumber('35275416', 'I16', '0x100000000', '0x200000000');
+      h5gg.searchNearby('538', 'I16', '0x20');
+      h5gg.searchNumber('538', 'I16', '0x100000000', '0x160000000');
+		var count = h5gg. getResultsCount();//获取总共搜索结果个数
+		var r = h5gg.getResults(count);//获取总共搜索结果个数的数组
+		//开始循环遍历
+		for(var i=0; i<count; i++) {
+		var addr1 = r[i].address;//获取每个搜索结果的地址 address地址 value值 type类型
+		var weishu = /E$/;///设置置顶结尾
+		var pd = weishu.test(addr1);//判断地址是否包含指定结尾
+		//进行修改
+		if(pd){
+		h5gg.setValue(addr1, 1115, "I16");
+		}}
+		alert('开启成功');
+		h5gg.clearResults();
+      
+      }
+
+
+      function sj2()
+	   {
+      h5gg.clearResults();
+      h5gg.searchNumber('35275416', 'I16', '0x100000000', '0x200000000');
+      h5gg.searchNearby('538', 'I16', '0x20');
+      h5gg.searchNumber('538', 'I16', '0x100000000', '0x160000000');
+		var count = h5gg. getResultsCount();//获取总共搜索结果个数
+		var r = h5gg.getResults(count);//获取总共搜索结果个数的数组
+		//开始循环遍历
+		for(var i=0; i<count; i++) {
+		var addr1 = r[i].address;//获取每个搜索结果的地址 address地址 value值 type类型
+		var weishu = /8$/;///设置置顶结尾
+		var pd = weishu.test(addr1);//判断地址是否包含指定结尾
+		//进行修改
+		if(pd){
+		h5gg.setValue(addr1, 1115, "I16");
+		}}
+		alert('开启成功');
+		h5gg.clearResults();      
+      }
+
+      function sj3()
+	   {
+      h5gg.clearResults();
+      h5gg.searchNumber('35275416', 'I16', '0x100000000', '0x200000000');
+      h5gg.searchNearby('538', 'I16', '0x20');
+      h5gg.searchNumber('538', 'I16', '0x100000000', '0x200000000');
+		var count = h5gg. getResultsCount();//获取总共搜索结果个数
+		var r = h5gg.getResults(count);//获取总共搜索结果个数的数组
+		//开始循环遍历
+		for(var i=0; i<count; i++) {
+		var addr1 = r[i].address;//获取每个搜索结果的地址 address地址 value值 type类型
+		var weishu = /4$/;///设置置顶结尾
+		var pd = weishu.test(addr1);//判断地址是否包含指定结尾
+		//进行修改
+		if(pd){
+		h5gg.setValue(addr1, 1115, "I16");
+		}}
+		alert('开启成功');
+		h5gg.clearResults();    
+      }
+      function huanjingse(){
+
+      h5gg.clearResults();
+
+      h5gg.searchNumber('-769356050', 'I32', '0x0', '0x200000000');
+
+      h5gg.editAll('-2145897319', 'I32');
+
+		alert("开启成功");
+
+      }
+<!-- 下面是端口验证 -->
+		function yz()
+		{
+		h5gg.clearResults();
+		h5gg.searchNumber('0.05499718338', 'F32', '0x100000000', '0x160000000');
+		alert('数据：' + h5gg.getResultsCount() + '条，【数据必须4条，否则重新操作一遍】');
+    }
+</script>
+<script>
+function refreshProcList() {
+        var procs = h5gg.getProcList();
+        var game;
+        var name;
+        for (var i = 0; i < h5gg.getProcList().length; i++) {
+            if (h5gg.getProcList()[i].name == "ShadowTrackerExt") {
+                game = h5gg.getProcList()[i];
+                h5gg.setTargetProc(game.pid);
+                name = game.name;
+                h5gg.clearResults();
+            }
+        }
+        if (name == "ShadowTrackerExt") { /*window.location = "http://3p.kkko.me/";*/ } else {
+            alert("请先进游戏！");
+            refreshProcList()
+        }
+    }
+    refreshProcList()
+
+    //***************进游戏提示************
+  var fpsVal = 16.7;
+
+                                var cacheVal = 1000;
+
+                                var myTeam = 0;
+
+                                var baseAddr = Number(h5gg.getRangesList(0)[0].start); //aslr只读一次，注：略微减少性能消耗
+
+                                
+        var GWorld = 0;
+        function backlash() {
+            GWorld = readLong(baseAddr + 0xb8c3358);
+          
+            if (isNull(GWorld)) return;
+
+                                    //获取自己
+var NetDriver;
+                                    NetDriver = readLong(GWorld + 0x98);
+                                    var ServerConnection = readLong(NetDriver + 0x88);
+                                    //人物数组
+                                    var localPlayerController = readLong(ServerConnection + 0x30);
+                                    //拿到自己的坐标
+                                    var selflocalPlayerbase = readLong(localPlayerController + 0x548);
+                                    //CharacterWeaponManagerComponent* WeaponManagerComponent;
+                                    var weaponManagerComponent = readLong(selflocalPlayerbase + 0x2a10);
+                                    //STExtraWeapon* CachedCurUseWeapon
+                                    var cachedCurUseWeapon = readLong(weaponManagerComponent + 0x308);
+                                    //STExtraShootWeaponComponent* ShootWeaponComponent
+                                    var shootWeaponComponent = readLong(cachedCurUseWeapon + 0x1178);
+                                    //STExtraShootWeapon* OwnerShootWeapon
+                                    var ownerShootWeapon = readLong(shootWeaponComponent + 0x2d8);
+                                    //ShootWeaponEntity* ShootWeaponEntityComp
+                                    var shootWeaponEntityComp = readLong(ownerShootWeapon + 0x13c0); 
+            //无后
+            if(window.wuhou){
+            if (readFloat(shootWeaponEntityComp + 0x173c) != 0.001)
+                h5gg.setValue(shootWeaponEntityComp + 0x173c, 0.001, 'F32');
+            }else{
+            if (readFloat(shootWeaponEntityComp + 0x1738) != 1)
+                h5gg.setValue(shootWeaponEntityComp + 0x1738, 1, "F32");
+             }
+            //聚点
+            if(window.judian){
+            if (readFloat(shootWeaponEntityComp + 0x1784) != 0.001)
+                h5gg.setValue(shootWeaponEntityComp + 0x1784, 0.001, 'F32');
+            }else{
+            if (readFloat(shootWeaponEntityComp + 0x174c) != 1)
+                h5gg.setValue(shootWeaponEntityComp + 0x174c, 1, "F32");
+            }
+                                               //双防
+                                     if (window.shuangfang) {
+                                    //float RecoilKickADS
+                                        h5gg.setValue(shootWeaponEntityComp + 0x1868, 0.01, "F32"); //枪防       
+                                      h5gg.setValue(shootWeaponEntityComp + 0x1884, 0.01, 'F32'); //镜防
+                                     }
+                                     //枪械瞬击
+                                    if (window.shunji) {
+                                        h5gg.setValue(shootWeaponEntityComp + 0x130E, 980000, 'F32'); // CheckVisibleFailedCnt 0x1130
+                                    }
+
+
+                                
+          
+          
+        function readInt(addr) {
+                                    return Number(h5gg.getValue(addr, "I32"));
+                                }
+
+                                function readLong(addr) {
+                                    return Number(h5gg.getValue(addr, "I64"));
+                                }
+
+                                function readFloat(addr) {
+                                    return Number(h5gg.getValue(addr, "F32"));
+                                }
+
+                                function isNull(addr) {
+                                    return (addr < 0x100000000 || addr > 0x300000000);
+                                }
+  
+
+                                drawTimer = setInterval(function () {
+
+                                    backlash();
+
+
+                                },fpsVal);
+  }
+<!-- 没用的东西 -->
+function myFunction() {
+var x = document.getElementById("myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction0() {
+var x = document.getElementById("0myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction1() {
+var x = document.getElementById("1myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction2() {
+var x = document.getElementById("2myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction3() {
+var x = document.getElementById("3myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction4() {
+var x = document.getElementById("4myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction5() {
+var x = document.getElementById("5myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction6() {
+var x = document.getElementById("6myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction7() {
+var x = document.getElementById("7myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction8() {
+var x = document.getElementById("8myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction9() {
+var x = document.getElementById("9myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+  function myFunction10() {
+var x = document.getElementById("10myText");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}              
+</script>
+<html lang="en">
+<script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
+<title>iok</title>
+</html>
